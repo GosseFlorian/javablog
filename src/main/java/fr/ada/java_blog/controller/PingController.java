@@ -1,4 +1,4 @@
-package fr.ada.java_blog;
+package fr.ada.java_blog.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
