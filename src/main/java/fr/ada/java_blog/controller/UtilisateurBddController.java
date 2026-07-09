@@ -47,12 +47,13 @@ public class UtilisateurBddController {
                         FROM users
                         WHERE id = ?
                         """,
-                (rs, rowNum) -> new UtilisateurBdd(
-                        rs.getInt("id"),
-                        rs.getString("pseudo"),
-                        rs.getString("mail"),
-                        rs.getString("mdp")),
-                id);
+                (rs, rowNum) -> {
+                    return new UtilisateurBdd(
+                            rs.getInt("id"),
+                            rs.getString("pseudo"),
+                            rs.getString("mail"),
+                            rs.getString("mdp"));
+                }, id);
     }
 
     @PostMapping("/utilisateurs")
