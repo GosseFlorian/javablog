@@ -1,15 +1,25 @@
 package fr.ada.java_blog.model;
 
+import java.time.LocalDateTime;
+
 public class Article {
 
+    private Integer id;
     private String titre;
     private String contenu;
     private boolean publie;
+    private LocalDateTime date;
 
-    public Article(String titre, String contenu) {
+    public Article(Integer id, String titre, String contenu, boolean publie, LocalDateTime date) {
+        this.id = id;
         this.titre = titre;
         this.contenu = contenu;
-        this.publie = false;
+        this.publie = publie;
+        this.date = date;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getTitre() {
@@ -24,12 +34,7 @@ public class Article {
         return publie;
     }
 
-    public void publier() {
-        this.publie = true;
-    }
-
-    @Override
-    public String toString() {
-        return "Article{titre='" + titre + "', publie=" + publie + "}";
+    public LocalDateTime getDate() {
+        return date;
     }
 }
